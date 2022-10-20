@@ -2,6 +2,8 @@
 
 an 8-bit fantasy console
 
+to compile assembly programs for it, look at https://github.com/yeti0904/y8sm
+
 ## specs
 
 RAM: 65kB
