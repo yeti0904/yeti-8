@@ -354,6 +354,96 @@ void VM::RunInstruction(bool& run) {
 			}
 			break;
 		}
+		case YETI8_INSTRUCTION_AND: {
+			uint8_t reg1 = memory[registers.pc];
+			++ registers.pc;
+			uint8_t reg2 = memory[registers.pc];
+			++ registers.pc;
+
+			if ((RegSize(reg1) != 1) || (RegSize(reg2) != 1)) {
+				fprintf(
+					stderr,
+					"[ERROR] multi-parameter bitwise operations must use 8-bit registers\n"
+				);
+				run = false;
+				return;
+			}
+
+			registers.ac = reg1 & reg2;
+			break;
+		}
+		case YETI8_INSTRUCTION_OR: {
+			uint8_t reg1 = memory[registers.pc];
+			++ registers.pc;
+			uint8_t reg2 = memory[registers.pc];
+			++ registers.pc;
+
+			if ((RegSize(reg1) != 1) || (RegSize(reg2) != 1)) {
+				fprintf(
+					stderr,
+					"[ERROR] multi-parameter bitwise operations must use 8-bit registers\n"
+				);
+				run = false;
+				return;
+			}
+
+			registers.ac = reg1 ^ reg2;
+			break;
+		}
+		case YETI8_INSTRUCTION_XOR: {
+			uint8_t reg1 = memory[registers.pc];
+			++ registers.pc;
+			uint8_t reg2 = memory[registers.pc];
+			++ registers.pc;
+
+			if ((RegSize(reg1) != 1) || (RegSize(reg2) != 1)) {
+				fprintf(
+					stderr,
+					"[ERROR] multi-parameter bitwise operations must use 8-bit registers\n"
+				);
+				run = false;
+				return;
+			}
+
+			registers.ac = reg1 ^ reg2;
+			break;
+		}
+		case YETI8_INSTRUCTION_LSH: {
+			uint8_t reg1 = memory[registers.pc];
+			++ registers.pc;
+			uint8_t reg2 = memory[registers.pc];
+			++ registers.pc;
+
+			if ((RegSize(reg1) != 1) || (RegSize(reg2) != 1)) {
+				fprintf(
+					stderr,
+					"[ERROR] multi-parameter bitwise operations must use 8-bit registers\n"
+				);
+				run = false;
+				return;
+			}
+
+			registers.ac = reg1 << reg2;
+			break;
+		}
+		case YETI8_INSTRUCTION_RSH: {
+			uint8_t reg1 = memory[registers.pc];
+			++ registers.pc;
+			uint8_t reg2 = memory[registers.pc];
+			++ registers.pc;
+
+			if ((RegSize(reg1) != 1) || (RegSize(reg2) != 1)) {
+				fprintf(
+					stderr,
+					"[ERROR] multi-parameter bitwise operations must use 8-bit registers\n"
+				);
+				run = false;
+				return;
+			}
+
+			registers.ac = reg1 >> reg2;
+			break;
+		}
 		case YETI8_INSTRUCTION_HLT: {
 			run = false;
 			return;

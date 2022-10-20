@@ -24,6 +24,11 @@ RAM: 65kB
 (0x0B) NOT [reg] - performs bitwise not on [reg] and saves result in ac
 (0x0C) PUSH [reg] - pushes the contents of [reg] into the stack
 (0x0D) POP [reg] - decrements the stack pointer and puts the previous top of the stack in [reg]
+(0x0E) AND [reg1] [reg2] - performs bitwise and on [reg1] and [reg2] and saves in ac
+(0x0F) OR [reg1] [reg2] - performs bitwise or on [reg1] and [reg2] and saves in ac
+(0x10) XOR [reg1] [reg2] - performs bitwise xor on [reg1] and [reg2] and saves in ac
+(0x11) LSH [reg1] [reg2] - shifts [reg1] left by [reg2] bits and saves in ac
+(0x12) RSH [reg1] [reg2] - shifts [reg1] right by [reg2] bits and saves in ac
 (0xFF) HLT - stops execution of the program
 ```
 
