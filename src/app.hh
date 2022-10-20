@@ -17,6 +17,7 @@ class App {
 		// functions
 		App();
 		~App();
+		void HandleArguments(int argc, char** argv);
 		void Update();
 };
 

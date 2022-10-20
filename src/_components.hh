@@ -8,6 +8,9 @@
 
 // C++ standard libraries
 #include <array>
+#include <string>
 #include <vector>
+#include <fstream>
+#include <filesystem>
 
 #endif
