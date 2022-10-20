@@ -37,6 +37,7 @@ class VM {
 		uint16_t ReadReg(uint8_t reg);
 		void     WriteReg(uint8_t reg, uint16_t value);
 		size_t   RegSize(uint8_t reg);
+		void     DumpRegisters();
 		void     RunInstruction(bool& run);
 };
 

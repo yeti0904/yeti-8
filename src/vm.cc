@@ -162,6 +162,39 @@ size_t VM::RegSize(uint8_t reg) {
 	}
 }
 
+void VM::DumpRegisters() {
+	printf(
+		"REGISTER DUMP\n"
+		"=============\n"
+		"ac: 0x%X\n"
+		"sp: 0x%X\n"
+		"pc: 0x%X\n"
+		"hl: 0x%X\n"
+		"r1: 0x%X\n"
+		"r2: 0x%X\n"
+		"r3: 0x%X\n"
+		"r4: 0x%X\n"
+		"r5: 0x%X\n"
+		"r6: 0x%X\n"
+		"r7: 0x%X\n"
+		"r8: 0x%X\n"
+		"r9: 0x%X\n",
+		registers.ac,
+		registers.sp,
+		registers.pc,
+		registers.hl,
+		registers.r1,
+		registers.r2,
+		registers.r3,
+		registers.r4,
+		registers.r5,
+		registers.r6,
+		registers.r7,
+		registers.r8,
+		registers.r9
+	);
+}
+
 void VM::RunInstruction(bool& run) {
 	uint8_t instruction = memory[registers.pc];
 	++ registers.pc;

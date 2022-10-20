@@ -20,7 +20,7 @@ App::App():
 }
 
 App::~App() {
-	printf("r1: 0x%X\nac: 0x%X\n", vm.registers.r1, vm.registers.ac);
+	vm.DumpRegisters();
 }
 
 void App::Update() {
